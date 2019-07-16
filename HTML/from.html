@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="C:\new\css\style.css">
+    <script src="C:\new\js\form.js"> </script>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet " href="css\home.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.619/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.619/styles/kendo.material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.619/styles/kendo.material.mobile.min.css" />
+
+    <script src="https://kendo.cdn.telerik.com/2019.2.619/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.2.619/js/kendo.all.min.js"></script>
+    <script src="javascript\home.js"></script>
+    <!--search location-->
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.619/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.619/styles/kendo.material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.619/styles/kendo.material.mobile.min.css" />
+
+    <!--date picker-->
+    <link rel="stylesheet" href="styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="styles/kendo.default.min.css" />
+    <link rel="stylesheet" href="styles/kendo.default.mobile.min.css" />
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+    <style>
+        /* location search */
+        #fieldlist li .k-widget:not(.k-tooltip),
+        #fieldlist li .k-textbox {
+            margin: 0 5px 5px 0;
+        }
+
+        span.k-widget.k-tooltip-validation {
+            display: inline-block;
+
+            text-align: left;
+            border: 0;
+            padding: 0;
+            margin-left: 10%;
+            background: none;
+            box-shadow: none;
+            color: red;
+        }
+
+        .k-tooltip-validation .k-warning {
+            display: none;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .column {
+            flex: -1px;
+            padding: 2px;
+            margin-top: 08%;
+            margin-left: 1%;
+        }
+
+        /*image*/
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+            margin-top: 08px;
+        }
+
+        /* Clearfix (clear floats) */
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+
+<center>
+    <h1 style="color:white;"><i>SANJEEVANI CLINIC</i></h1>
+</center>
+
+
+
+<body background="C:\new\img\f6.png">
+
+
+    <div class="row">
+        <div class="column">
+            <div id="example">
+                <div class="demo-section k-content">
+                    <label for="search" class="required"><b>Search
+                            Specialities:</b>&nbsp;&nbsp;
+                        <input type="search" id="search" name="search" required validationMessage="Select movie"
+                            style="width: 200px;" /><span class="k-invalid-msg" data-for="search"></label></span>
+                    <br>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="column">
+            <div id="example">
+                <div class="demo-section k-content">
+                    <label for="countries" style="width: 200px; "><b>Choose city:</b>
+                        <input id="countries" /></label>
+                    <div class="demo-hint"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="column">
+            <div id="example">
+                <div class="demo-section k-content">
+                    <label for="datepicker" style="width:200px;"><b>Select date:</b>
+                        <input id="datepicker" /></label>
+
+                    <!--<input id="datepicker" value="10/10/2011" title="datepicker" style="width: 220px;" /></h4>-->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <center>
+
+        <button class="w3-button w3-black">Submit</button></center>
+
+    <br>
+    <hr>
+    <div class="row">
+        <div class="column">
+            <img src="C:\new\img\h1.png" alt="Snow" style="width:110%">
+        </div>
+        <div class="column">
+            <img src="C:\new\img\i2.jpg" alt="Forest" style="width:130%">
+        </div>
+
+        <div class="column">
+            <img src="C:\new\img\h3.jpg" alt="Forest" style="width:120%">
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!--script for search-->
+    <script>
+        $(document).ready(function () {
+            var data = [
+                "Primary care Doctor",
+                "Dermatologist",
+                "Dentist",
+                "ear,nose",
+                "eye doctor",
+                "Hering Specialist",
+                "Orthopedic Surgen"
+            ];
+
+            $("#search").kendoAutoComplete({
+                dataSource: data,
+                separator: ", "
+
+            });
+
+
+            var validator = $("#ticketsForm").kendoValidator().data("kendoValidator"),
+                status = $(".status");
+
+            $("form").submit(function (event) {
+                event.preventDefault();
+                if (validator.validate()) {
+                    status.text("Hooray! Your tickets has been booked!")
+                        .removeClass("invalid")
+                        .addClass("valid");
+                } else {
+                    status.text("Oops! There is invalid data in the form.")
+                        .removeClass("valid")
+                        .addClass("invalid");
+                }
+            });
+        });
+    </script>
+
+    <!--script for search-->
+    <script>
+        $(document).ready(function () {
+            var data = [
+                "Pune",
+                "Mumbai",
+                "Nashik",
+                "Aurangabad",
+                "Nagpur",
+                "Haidrabad",
+                "Belgium",
+                "Bosnia & Herzegovina",
+                "Bulgaria",
+                "Croatia",
+                "Cyprus",
+
+            ];
+
+            //create AutoComplete UI component
+            $("#countries").kendoAutoComplete({
+                dataSource: data,
+                filter: "startswith",
+                placeholder: "Select city...",
+                separator: ", "
+            });
+        });
+    </script>
+    <!--date picker-->
+    <script>
+        $(document).ready(function () {
+            // create DatePicker from input HTML element
+            $("#datepicker").kendoDatePicker();
+
+            $("#monthpicker").kendoDatePicker({
+                // defines the start view
+                start: "year",
+
+                // defines when the calendar should return date
+                depth: "year",
+
+                // display month and year in the input
+                format: "MMMM yyyy",
+
+                // specifies that DateInput is used for masking the input element
+                dateInput: true
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
