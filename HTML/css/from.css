@@ -1,0 +1,60 @@
+ /* location search */
+        #fieldlist li .k-widget:not(.k-tooltip),
+        #fieldlist li .k-textbox {
+            margin: 0 5px 5px 0;
+        }
+
+        span.k-widget.k-tooltip-validation {
+            display: inline-block;
+
+            text-align: left;
+            border: 0;
+            padding: 0;
+            margin-left: 10%;
+            background: none;
+            box-shadow: none;
+            color: red;
+        }
+
+        .k-tooltip-validation .k-warning {
+            display: none;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .column {
+            flex: -1px;
+            padding: 2px;
+            margin-top: 08%;
+            margin-left: 1%;
+        }
+
+        /*image*/
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+            margin-top: 08px;
+        }
+
+        /* Clearfix (clear floats) */
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        #myDIV {
+            width: 60%;
+
+            padding: 20px 0;
+            text-align: center;
+            background-color: white;
+            margin-top: 20px;
+        }
