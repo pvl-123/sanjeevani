@@ -1,9 +1,31 @@
 <?php
  
-include('config.php');
+//include('config.php');
+// Start the session
 session_start();
+//Establish a connection with the DB
+$host = "localhost";
+$user = "root";
+$password = "";
+$dbname = "patient";
+$conn = new mysqli($host, $user, $password, $dbname);
+
+$email = $_POST["email"];
+
+
+$sql = "SELECT id FROM reg WHERE email='$email'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $_SESSION["id"] = $row["id"];  //Session variable id set, to be used across all pages
+        header("location:user.php"); 
+    }
+} else {
+    echo "Unregistered.";
+}
  
-if (isset($_POST['login'])) {
+/*if (isset($_POST['login'])) {
  
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -26,6 +48,6 @@ if (isset($_POST['login'])) {
             echo '<p class="error">Username password combination is wrong!</p>';
         }
     }
-}
+}*/
  
 ?>

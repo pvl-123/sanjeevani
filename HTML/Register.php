@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
  
         if ($result) {
            // echo '<p class="success">Your registration was successful!</p>';
-           header("location:log.html"); 
+           header("location:log.php"); 
         } else {
             echo '<p class="error">Something went wrong!</p>';
         }

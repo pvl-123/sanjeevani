@@ -1,20 +1,19 @@
-
 <html>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="style.css">
     <script src="js\form.js"> </script>
-    
+
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-        <!--search location-->
-    <link rel="stylesheet"href="https://kendo.cdn.telerik.com/2019.2.619/styles/kendo.common-material.min.css" />
+    <!--search location-->
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.619/styles/kendo.common-material.min.css" />
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.619/styles/kendo.material.min.css" />
-    <link rel="stylesheet"href="https://kendo.cdn.telerik.com/2019.2.619/styles/kendo.material.mobile.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.619/styles/kendo.material.mobile.min.css" />
 
     <script src="https://kendo.cdn.telerik.com/2019.2.619/js/jquery.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2019.2.619/js/kendo.all.min.js"></script>
@@ -22,7 +21,7 @@
 
 
     <!--date picker-->
-   <!-- <link rel="stylesheet" href="styles/kendo.common.min.css" />
+    <!-- <link rel="stylesheet" href="styles/kendo.common.min.css" />
     <link rel="stylesheet" href="styles/kendo.default.min.css" />
     <link rel="stylesheet" href="styles/kendo.default.mobile.min.css" />
 
@@ -33,85 +32,86 @@
             <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2"
                 href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
 
-            <div class="w3-dropdown-hover w3-hide-small">
+            <!--<div class="w3-dropdown-hover w3-hide-small">
                 <button class="w3-button" title="Notifications">Login<i class="fa fa-caret-down"></i></button>
                 <div class="w3-dropdown-content w3-card-4 w3-bar-block">
                     <a href="Madmin.html" class="w3-bar-item w3-button">Admin</a>
                 </div>
-            </div>
+            </div>-->
 
             <a href="record.php" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal"
                 title="UserRecord"><i class="fa fa-user"></i></a>
 
             <a href="from.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Appoinment</a>
-            <a href="record.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Patient Record</a>
+            <a href="user.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Patient Record</a>
+        </div>
+    </div>
+    <br>
+    <br>
+</br>
 
 
+    <style>
+        /* location search */
+        #fieldlist li .k-widget:not(.k-tooltip),
+        #fieldlist li .k-textbox {
+            margin: 0 5px 5px 0;
+        }
 
+        span.k-widget.k-tooltip-validation {
+            display: inline-block;
 
-            <style>
-                /* location search */
-                #fieldlist li .k-widget:not(.k-tooltip),
-                #fieldlist li .k-textbox {
-                    margin: 0 5px 5px 0;
-                }
+            text-align: left;
+            border: 0;
+            padding: 0;
+            margin-left: 10%;
+            background: none;
+            box-shadow: none;
+            color: red;
+        }
 
-                span.k-widget.k-tooltip-validation {
-                    display: inline-block;
+        .k-tooltip-validation .k-warning {
+            display: none;
+        }
 
-                    text-align: left;
-                    border: 0;
-                    padding: 0;
-                    margin-left: 10%;
-                    background: none;
-                    box-shadow: none;
-                    color: red;
-                }
+        .row {
+            display: flex;
+        }
 
-                .k-tooltip-validation .k-warning {
-                    display: none;
-                }
+        .column {
+            flex: -1px;
+            padding: 2px;
+            margin-top: 08%;
+            margin-left: 1%;
+        }
 
-                .row {
-                    display: flex;
-                }
+        /*image*/
+        * {
+            box-sizing: border-box;
+        }
 
-                .column {
-                    flex: -1px;
-                    padding: 2px;
-                    margin-top: 08%;
-                    margin-left: 1%;
-                }
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+            margin-top: 08px;
+        }
 
-                /*image*/
-                * {
-                    box-sizing: border-box;
-                }
-
-                .column {
-                    float: left;
-                    width: 33.33%;
-                    padding: 5px;
-                    margin-top: 08px;
-                }
-
-                /* Clearfix (clear floats) */
-                .row::after {
-                    content: "";
-                    clear: both;
-                    display: table;
-                }
-            </style>
+        /* Clearfix (clear floats) */
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
 </head>
 
 <center>
-    <h1 style="color:white;"><i>SANJEEVANI CLINIC</i></h1>
+    <h1 style="color:black;"><i>SANJEEVANI CLINIC</i></h1>
 </center>
 
-
-
-    <body background="img\f6.png">
-            <form method="POST" action="schedule.php">
+<body background="img\f6.png">
+    <form method="POST" action="schedule.php">
         <div class="row">
             <div class="column">
                 <div id="example">
@@ -137,7 +137,7 @@
 
             <div class="column">
                 <div id="example">
-                   <!-- <div class="demo-section k-content">
+                    <!-- <div class="demo-section k-content">
                         <label for="datepicker" style="width:200px;"><b>Select date:</b>
                             <input id="datepicker" name="Date" /></label>
 
@@ -149,101 +149,101 @@
         <br>
         <center>
             <button type="submit" class="w3-button w3-black" name="search">Search</button></center>
-</form>
-        <br>
-        <hr>
-        <div class="row">
-            <div class="column">
-                <img src="img\h1.png" alt="Snow" style="width:110%">
-            </div>
-            <div class="column">
-                <img src="img\i2.jpg" alt="Forest" style="width:130%">
-            </div>
-
-            <div class="column">
-                <img src="img\h3.jpg" alt="Forest" style="width:120%">
-            </div>
-
-
+    </form>
+    <br>
+    <hr>
+    <div class="row">
+        <div class="column">
+            <img src="img\h1.png" alt="Snow" style="width:110%">
+        </div>
+        <div class="column">
+            <img src="img\i2.jpg" alt="Forest" style="width:130%">
         </div>
 
-        <!--script for search-->
-        <script>
-            $(document).ready(function () {
-                var data = [
-                    "Primary care Doctor",
-                    "Dermatologist",
-                    "Dentist",
-                    "ear,nose",
-                    "eye doctor",
-                    "Hering Specialist",
-                    "Orthopedic Surgen"
-                ];
-
-                $("#search").kendoAutoComplete({
-                    dataSource: data,
-                    separator: ", "
-
-                });
+        <div class="column">
+            <img src="img\h3.jpg" alt="Forest" style="width:120%">
+        </div>
 
 
-                var validator = $("#ticketsForm").kendoValidator().data("kendoValidator"),
-                    status = $(".status");
+    </div>
 
-                
+    <!--script for search-->
+    <script>
+        $(document).ready(function () {
+            var data = [
+                "Primary care Doctor",
+                "Dermatologist",
+                "Dentist",
+                "ear,nose",
+                "eye doctor",
+                "Hering Specialist",
+                "Orthopedic Surgen"
+            ];
+
+            $("#search").kendoAutoComplete({
+                dataSource: data,
+                separator: ", "
+
             });
-        </script>
 
-        <!--script for search-->
-        <script>
-            $(document).ready(function () {
-                var data = [
-                    "Pune",
-                    "Mumbai",
-                    "Nashik",
-                    "Aurangabad",
-                    "Nagpur",
-                    "Haidrabad",
-                    "Belgium",
-                    "Bosnia & Herzegovina",
-                    "Bulgaria",
-                    "Croatia",
-                    "Cyprus",
 
-                ];
+            var validator = $("#ticketsForm").kendoValidator().data("kendoValidator"),
+                status = $(".status");
 
-                //create AutoComplete UI component
-                $("#countries").kendoAutoComplete({
-                    dataSource: data,
-                    filter: "startswith",
-                    placeholder: "Select city...",
-                    separator: ", "
-                });
+
+        });
+    </script>
+
+    <!--script for search-->
+    <script>
+        $(document).ready(function () {
+            var data = [
+                "Pune",
+                "Mumbai",
+                "Nashik",
+                "Aurangabad",
+                "Nagpur",
+                "Haidrabad",
+                "Belgium",
+                "Bosnia & Herzegovina",
+                "Bulgaria",
+                "Croatia",
+                "Cyprus",
+
+            ];
+
+            //create AutoComplete UI component
+            $("#countries").kendoAutoComplete({
+                dataSource: data,
+                filter: "startswith",
+                placeholder: "Select city...",
+                separator: ", "
             });
-        </script>
-        <!--date picker-->
-        <script>
-            $(document).ready(function () {
-                // create DatePicker from input HTML element
-                $("#datepicker").kendoDatePicker();
+        });
+    </script>
+    <!--date picker-->
+    <script>
+        $(document).ready(function () {
+            // create DatePicker from input HTML element
+            $("#datepicker").kendoDatePicker();
 
-                $("#monthpicker").kendoDatePicker({
-                    // defines the start view
-                    start: "year",
+            $("#monthpicker").kendoDatePicker({
+                // defines the start view
+                start: "year",
 
-                    // defines when the calendar should return date
-                    depth: "year",
+                // defines when the calendar should return date
+                depth: "year",
 
-                    // display month and year in the input
-                    format: "MMMM yyyy",
+                // display month and year in the input
+                format: "MMMM yyyy",
 
-                    // specifies that DateInput is used for masking the input element
-                    dateInput: true
-                });
+                // specifies that DateInput is used for masking the input element
+                dateInput: true
             });
-        </script>
+        });
+    </script>
 
 
-    </body>
+</body>
 
 </html>

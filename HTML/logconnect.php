@@ -2,9 +2,6 @@
 // Start the session
 session_start();
 ?>
-
-
-
 <!DOCTYPE html>
 <html>
 
@@ -54,7 +51,7 @@ session_start();
           <a href="Madmin.html" class="w3-bar-item w3-button">Admin</a>
         </div>
       </div>
-      <!--<a href="Register.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Register</a>-->
+      <a href="Register.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Register</a>
       <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
       <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="User"><i class="fa fa-user"></i></a>
     </div>
@@ -75,7 +72,7 @@ session_start();
   <br><br>-->
     <!--Sign In Form-->
 
-<body background="img\i2.jpg">
+<body background="C:\xampp\htdocs\new\HTML\img\i2.jpg">
 
   <center>
     <!-- <h1 style="color:blue;"><i>SANJEEVANI CLINIC</i></h1>-->

@@ -69,20 +69,18 @@
                         <h1>Patient Personal Details</h1>
 
                         <?php
-                        $sql = "SELECT First_name,Last_name, email, Address_1, Address_2 FROM reg WHERE id=$id";
+                        $sql = "SELECT dob,gender, email, medi_his FROM p_app WHERE id=$id";
                         $result = $conn->query($sql);
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
-                                echo "<tr><td>First_name:</td><td>";
-                                echo $row["First_name"];
-                                echo "<tr><td>Last_name:</td><td>";
-                                echo $row["Last_name"];
-                                echo "<tr><td>Email-id:</td><td>";
+                                echo "<tr><td>dob:</td><td>";
+                                echo $row["dob"];
+                                echo "<tr><td>gender:</td><td>";
+                                echo $row["gender"];
+                                echo "<tr><td>email:</td><td>";
                                 echo $row["email"];
-                                echo "<tr><td>Address_1:</td><td>";
-                                echo $row["Address_1"];
-                                echo "<tr><td>Address_2:</td><td>";
-                                echo $row["Address_2"];
+                                echo "<tr><td>medi_his:</td><td>";
+                                echo $row["medi_his"];
                             }
                         } else {
                             echo "Unregistered user. Sign Up first.";
@@ -91,12 +89,10 @@
 
                         <tr>
 
-                            <td><button class="button0" name="edit" onclick="window.location.href='userdetail.php'">
+                            <td><button class="button0" name="patient detail" onclick="window.location.href='app.html'">
                                     Edit Your Details
                                 </button></td>
-                            <td><button class="button1" name="delete" onclick="window.location.href='Userdelete.php'">
-                                    Delete Your Account
-                                </button></td>
+
             </div>
 
             </table>
