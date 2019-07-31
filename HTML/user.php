@@ -37,7 +37,7 @@
 
             <a href="from.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Appoinment</a>
 
-            <a href="record.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Patient Details</a>
+            <a href="" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Patient Details</a>
         </div>
     </div>
 
@@ -69,44 +69,78 @@
                         <h1>Patient Personal Details</h1>
 
                         <?php
-                        $sql = "SELECT First_name,Last_name, email, Address_1, Address_2 FROM reg WHERE id=$id";
+                        $sql = "SELECT Full_name,dob,gender, email,Current_Medication, Address_1, Address_2 FROM reg WHERE id=$id";
                         $result = $conn->query($sql);
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
-                                echo "<tr><td>First_name:</td><td>";
-                                echo $row["First_name"];
-                                echo "<tr><td>Last_name:</td><td>";
-                                echo $row["Last_name"];
-                                echo "<tr><td>Email-id:</td><td>";
-                                echo $row["email"];
-                                echo "<tr><td>Address_1:</td><td>";
-                                echo $row["Address_1"];
-                                echo "<tr><td>Address_2:</td><td>";
-                                echo $row["Address_2"];
+                                ?>
+                                <tr>
+                                <tr>
+                                    <td> Full_name:</td>
+                                    <td><input type="text" name="Full_name" value="<?php echo $row['Full_name']; ?>" style="width: 150%"></td>
+                                </tr>
+                                <td> DOB:</td>
+                                <td><input type="text" name="dob" value="<?php echo $row['dob']; ?>" style="width: 150%"></td>
+                                </tr>
+                                <td> Gender:</td>
+                                <td><input type="text" name="gender" value="<?php echo $row['gender']; ?>" style="width: 150%"></td>
+                                </tr>
+                                <td> Email:</td>
+                                <td><input type="text" name="email" value="<?php echo $row['email']; ?>" style="width: 150%"></td>
+                                </tr>
+                                <td> Current_Medication:</td>
+                                <td><input type="text" name="Current_Medication" value="<?php echo $row['Current_Medication']; ?>" style="width: 150%"></td>
+                                </tr>
+                                <td> Address_1:</td>
+                                <td><input type="text" name="Address_1" value="<?php echo $row["Address_1"]; ?>" style="width: 150%"></td>
+                                </tr>
+                                <td> Address_2:</td>
+                                <td><input type="text" name="Address_2" value="<?php echo $row["Address_2"]; ?>" style="width: 150%"></td>
+                                </tr>
+
+
+
+
+                            <?php
+
                             }
                         } else {
                             echo "Unregistered user. Sign Up first.";
                         }
+
                         ?>
+
 
                         <tr>
 
-                            <td><button class="button0" name="edit" onclick="window.location.href='userdetail.php'">
-                                    Edit Your Details
-                                </button></td>
-                            <td><button class="button1" name="delete" onclick="window.location.href='Userdelete.php'">
-                                    Delete Your Account
-                                </button></td>
+                            <!-- <td><button class="button0" name="edit" onclick="window.location.href='userdetail.php'">-->
+                            <td><a href="userdetail.php" button onclick="edit()"><b>Edit Your Details<b></a>
+                            </td>
+                            <script>
+                                function edit() {
+                                    alert("are you want to edit your details!!!");
+                                }
+                            </script>
+
+                            <td><a href="Userdelete.php" button onclick="delet()"><b>Delete Your Account</b></a></td>
+                            <script>
+                                function delet() {
+                                    alert("are you want to delete your data!!!");
+                                }
+                            </script>
+
+                        </tr>
             </div>
 
             </table>
 
             </fieldset>
-
-
-        </body>
     </center>
-    <!-- Modal -->
+
+
+</body>
+
+<!-- Modal -->
 
 
 

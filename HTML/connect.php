@@ -19,7 +19,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $_SESSION["id"] = $row["id"];  //Session variable id set, to be used across all pages
-        header("location:user.php"); 
+        header("location:from.html"); 
     }
 } else {
     echo "Unregistered.";

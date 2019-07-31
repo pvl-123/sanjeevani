@@ -20,7 +20,15 @@
 </head>
 
 
-
+<div class="w3-top">
+    <div class="w3-bar w3-theme-d2 w3-left-align">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+        <a href="record.php" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="UserRecord"><i class="fa fa-user"></i></a>
+        <a href="form1.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Appoinment</a>
+        <a href="user.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Patient Record</a>
+    </div>
+</div>
+<br><br>
 
 <?php
 session_start();
@@ -32,72 +40,60 @@ $conn = mysqli_connect($url, $username, $password, "patient");
 if (!$conn) {
     die('Could not Connect My Sql:' . mysql_error());
 }
-$result = mysqli_query($conn, "SELECT d.spec_id,d.doc_city,d.patient_experience,s.Spec_name FROM doctor d, city c, spec s
+$result = mysqli_query($conn, "SELECT d.spec_id,d.doc_city,d.doc_name,d.patient_experience,s.Spec_name FROM doctor d, city c, spec s
 WHERE d.doc_city = c.doc_city AND c.doc_city='pune' AND d.spec_id= s.spec_id AND d.spec_id=1");
 ?>
 
 <!DOCTYPE html>
 <html>
 
-
 <body background="img\f6.png">
     <center>
-        <h1 style="color:white;"><i>SANJEEVANI CLINIC</i></h1>
-    </center>
-    <form method="POST" action="from.php">
-        <h3>Available Doctors</h3>
-        <title>doctor data </title>
-        <?php
-        if (mysqli_num_rows($result) > 0) {
-            ?>
-            <br><br><br>
-            <table width="400" border="2" cellpadding="2" cellspacing='1' id="mytable">
-                <tr bgcolor="#2ECCFA">
+        <h1 style="color:black"><i>SANJEEVANI CLINIC</i></h1>
 
-                    <td>spec_id</td>
-                    <td>spec_name</td>
-                    <td>doc_city</td>
-                    <td>patient_experience</td>
-                    <td>Action</td>
-
-
-                </tr>
-                <?php
-                if (isset($_POST['search'])) {
-                    $i = 0;
-                    while ($row = mysqli_fetch_array($result)) {
-                        ?>
-
-
-                        <tr>
-                            <td> <?php echo $row["spec_id"] ?></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $row["Spec_name"] ?></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $row["doc_city"] ?></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $row["patient_experience"] ?></td>
-                        </tr>
-                        <td> <a href="form1.html">Request for Appointment
-
-
-                                <?php
-                                $i++;
-                            }
+        <form method="POST" action="form.php">
+            <h3>Available Doctors</h3>
+            <title>doctor data </title>
+            <?php
+            if (mysqli_num_rows($result) > 0) {
+                ?>
+                <br><br><br>
+                <table width="400" border="2" cellpadding="2" cellspacing='1' id="mytable">
+                    <tr bgcolor="#2ECCFA">
+                        <td><b>Spec_Id</b></td>
+                        <td><b>Spec_Name</b></td>
+                        <td><b>Doc_City</b></td>
+                        <td><b>Patient_Experience</b></td>
+                        <td><b>Doc_Name</b></td>
+                        <td><b>Action</b></td>
+                    </tr>
+                    <?php
+                    if (isset($_POST['search'])) {
+                        $i = 0;
+                        while ($row = mysqli_fetch_array($result)) {
+                            ?>
+                            <tr>
+                                <td> <?php echo $row["spec_id"] ?></td>
+                                <td><?php echo $row["Spec_name"] ?></td>
+                                <td><?php echo $row["doc_city"] ?></td>
+                                <td><?php echo $row["patient_experience"] ?></td>
+                                <td> <?php echo $row["doc_name"] ?></td>
+                                <td> <a href="form1.php"><b>Request for Appointment</b>
+                            </tr>
+                            <?php
+                            $i++;
                         }
-                        ?>
-            </table>
-        <?php
-        } else {
-            echo "No result found";
-            header('location:form1.php');
-        }
-        ?>
-    </form>
-
+                    }
+                    ?>
+                </table>
+            <?php
+            } else {
+                echo "No result found";
+                header('location:form.php');
+            }
+            ?>
+        </form>
+    </center>
 </body>
 
 

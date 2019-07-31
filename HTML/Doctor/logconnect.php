@@ -1,12 +1,7 @@
 <?php
 // Start the session
 session_start();
-$email=$_SESSION['email'];
-
 ?>
-
-
-
 <!DOCTYPE html>
 <html>
 
@@ -22,7 +17,6 @@ $email=$_SESSION['email'];
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css\book1css.css">
-  <link rel="stylesheet" href="css\log.css">
   <script src=""></script>
 
   <!-- Navbar -->
@@ -57,7 +51,7 @@ $email=$_SESSION['email'];
           <a href="Madmin.html" class="w3-bar-item w3-button">Admin</a>
         </div>
       </div>
-      <!--<a href="Register.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Register</a>-->
+      <a href="Register.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Register</a>
       <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
       <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="User"><i class="fa fa-user"></i></a>
     </div>
@@ -78,7 +72,7 @@ $email=$_SESSION['email'];
   <br><br>-->
     <!--Sign In Form-->
 
-<body background="img\i2.jpg">
+<body background="C:\xampp\htdocs\new\HTML\img\i2.jpg">
 
   <center>
     <!-- <h1 style="color:blue;"><i>SANJEEVANI CLINIC</i></h1>-->
@@ -86,7 +80,7 @@ $email=$_SESSION['email'];
 
 
   <div class="login-form">
-    <form method="POST" action="Patient\connect.php">
+    <form method="POST" action="connect.php">
       <h2 style="color: black;" class="text-center">Sign in</h2>
       <div class="text-center social-btn">
         <a href="#" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i>Sign in with<b> Facebook</b></a>

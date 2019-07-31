@@ -11,14 +11,7 @@ if (isset($_POST['search'])) {
     $doc_Name = $_POST['doc_city'];
     
  
-    $query = $connection->prepare("SELECT 
-    Specialities_name, doc_city,
-FROM
-    doctor
-INNER JOIN 
-    spec ON spec.Specialities_Id = doctor.Specialities_Id;
-
-    );
+    $query = $connection->prepare("SELECT Specialities_name, doc_city, FROM doctor INNER JOIN  spec ON spec.Specialities_Id = doctor.Specialities_Id;");
     $query->bindParam("email", $email, PDO::PARAM_STR);
     $query->execute();
  
@@ -37,7 +30,7 @@ INNER JOIN
  
         if ($result) {
            // echo '<p class="success">Your registration was successful!</p>';
-           header("location:.html"); 
+          // header("location:from.html"); 
         } else {
             echo '<p class="error">Something went wrong!</p>';
         }
